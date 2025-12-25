@@ -3,7 +3,7 @@
 ## Overview
 This is a comprehensive Personal Finance Manager built with the MERN stack (MongoDB, Express.js, React, Node.js) that includes all the features you requested:
 
-### ✅ Features Implemented
+### Features Implemented
 - **Expense Tracking**: Record, categorize, and filter expenses with charts
 - **Budgeting**: Create budgets with real-time monitoring and alerts
 - **Financial Planning**: Goal setting with progress tracking and forecasting

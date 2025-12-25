@@ -46,6 +46,12 @@ const CategoriesList = () => {
       {isError && (
         <AlertMessage type="error" message={error.response.data.message} />
       )}
+      {categoryErr && (
+        <AlertMessage type="error" message={categoryErr.message || 'Failed to delete category'} />
+      )}
+      {isSuccess && (
+        <AlertMessage type="success" message="Category deleted successfully!" />
+      )}
       <ul className="space-y-4">
         {data?.map((category) => (
           <li

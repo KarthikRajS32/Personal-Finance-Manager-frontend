@@ -3,7 +3,6 @@ import { FaPlus, FaChartLine, FaWallet, FaBullseye, FaFileAlt, FaBell, FaCalenda
 import { Link } from "react-router-dom";
 import TransactionChart from "../Transactions/TransactionChart";
 import TransactionList from "../Transactions/TransactionList";
-import BudgetAlerts from "../Budget/BudgetAlerts";
 
 const Dashboard = () => {
   const quickActions = [
@@ -32,9 +31,6 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-
-        {/* Budget Alerts */}
-        <BudgetAlerts />
 
         {/* Quick Actions Grid */}
         <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">

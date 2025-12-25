@@ -1,58 +1,58 @@
-# Personal Finance Manager 💰
+# Personal Finance Manager 
 
 A comprehensive personal finance management application built with the MERN stack (MongoDB, Express.js, React, Node.js). Track expenses, manage budgets, set financial goals, and generate detailed reports with an intuitive and responsive interface.
 
-## 🚀 Features
+## Features
 
-### 💳 Expense Tracking
+### Expense Tracking
 - Record income and expenses with detailed categorization
 - Filter transactions by date, category, amount, and type
 - Visual charts and analytics for spending patterns
 - Recurring expense management for subscriptions and bills
 
-### 📊 Budget Management
+### Budget Management
 - Create monthly and yearly budgets by category
 - Real-time budget monitoring with usage tracking
 - Automated alerts when approaching spending limits
 - Budget variance analysis and recommendations
 
-### 🎯 Financial Goals
+### Financial Goals
 - Set savings, investment, and purchase goals with deadlines
 - Visual progress tracking with achievement notifications
 - Goal feasibility analysis and recommendations
 - Multiple goal categories (savings, investment, debt, emergency)
 
-### 📈 Financial Planning & Forecasting
+### Financial Planning & Forecasting
 - Advanced trend analysis for income and expenses
 - 6-36 month financial projections
 - AI-powered recommendations for financial improvement
 - Goal achievement timeline predictions
 
-### 📋 Comprehensive Reports
+### Comprehensive Reports
 - Detailed expense reports with interactive charts
 - Income tracking and source analysis
 - Budget performance reports with variance analysis
 - Export data in CSV and PDF formats
 
-### 🔔 Smart Notifications
+### Smart Notifications
 - Real-time alerts for budget limits and goal deadlines
 - Recurring expense due date reminders
 - Customizable notification preferences
 - Priority-based notification system
 
-### 👤 User Management
+### User Management
 - Secure authentication with JWT tokens
 - Multi-factor authentication (MFA) support
 - Comprehensive user profile management
 - Financial preferences and settings
 
-### 🔒 Security Features
+### Security Features
 - Password hashing with bcrypt
 - QR code-based MFA setup
 - Input validation and sanitization
 - Secure API endpoints with authentication
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - **React 18** - Modern UI library with hooks
@@ -74,7 +74,7 @@ A comprehensive personal finance management application built with the MERN stac
 - **Chart.js & Recharts** - Data visualization
 - **json2csv & pdfmake** - Data export functionality
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 - Node.js (v16 or higher)
@@ -108,7 +108,7 @@ npm run dev
 
 The application will be available at `http://localhost:5173`
 
-## 🎮 Usage
+## Usage
 
 ### Getting Started
 1. **Register/Login** - Create an account or sign in
@@ -147,22 +147,22 @@ The application will be available at `http://localhost:5173`
 4. View interactive charts and analytics
 5. Export data as CSV or PDF
 
-## 📱 Responsive Design
+## Responsive Design
 
 The application is fully responsive and optimized for:
-- 📱 Mobile devices (320px+)
-- 📱 Tablets (768px+)
-- 💻 Desktop computers (1024px+)
-- 🖥️ Large screens (1440px+)
+-  Mobile devices (320px+)
+-  Tablets (768px+)
+-  Desktop computers (1024px+)
+-  Large screens (1440px+)
 
-## 🔧 Available Scripts
+## Available Scripts
 
 - `npm run dev` - Start development server with hot reload
 - `npm run build` - Build production-ready application
 - `npm run preview` - Preview production build locally
 - `npm run lint` - Run ESLint for code quality checks
 
-## 📊 Project Structure
+## Project Structure
 
 ```
 src/
@@ -180,7 +180,7 @@ src/
 └── assets/             # Static assets
 ```
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -188,18 +188,18 @@ src/
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🆘 Support
+## Support
 
 For support and questions:
 - Check the [Setup Guide](SETUP_GUIDE.md) for detailed installation instructions
 - Review the [Analysis Summary](ANALYSIS_SUMMARY.md) for technical details
 - Open an issue for bug reports or feature requests
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Built with [Vite](https://vitejs.dev/) for fast development
 - Styled with [TailwindCSS](https://tailwindcss.com/) for modern UI
@@ -208,4 +208,4 @@ For support and questions:
 
 ---
 
-**Made with ❤️ for better financial management**
+**Made with for better financial management**

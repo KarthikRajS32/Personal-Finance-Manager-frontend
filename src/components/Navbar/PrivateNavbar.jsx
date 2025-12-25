@@ -39,11 +39,9 @@ export default function PrivateNavbar() {
     { name: "Categories", href: "/categories" },
     { name: "Budgets", href: "/budgets" },
     { name: "Goals", href: "/goals" },
-    { name: "Forecast", href: "/forecast" },
     { name: "Reports", href: "/reports" },
     { name: "Recurring", href: "/recurring-expenses" },
     { name: "Notifications", href: "/notifications" },
-    { name: "Analytics", href: "/analytics" },
   ];
 
   return (

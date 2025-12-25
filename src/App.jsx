@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import HeroSection from "./components/Home/HomePage";
 import PublicNavbar from "./components/Navbar/PublicNavbar";
 import LoginForm from "./components/Users/Login";
@@ -113,6 +113,7 @@ function App() {
             </AuthRoute>
           }
         />
+        <Route path="/forecast" element={<Navigate to="/goals" replace />} />
       </Routes>
     </BrowserRouter>
   );

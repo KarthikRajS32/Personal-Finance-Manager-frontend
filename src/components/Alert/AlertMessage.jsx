@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   AiOutlineCheckCircle,
   AiOutlineCloseCircle,
@@ -6,6 +6,19 @@ import {
 } from "react-icons/ai";
 
 const AlertMessage = ({ type, message }) => {
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    if (type === "success" || type === "error") {
+      const timer = setTimeout(() => {
+        setVisible(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [type]);
+
+  if (!visible) return null;
+
   let icon;
   let bgColor;
   let textColor;

@@ -50,20 +50,6 @@
    - Added PDF export route `/api/v1/export/pdf-report`
    - Added frontend PDF export API function
 
-### What Was Extra (Removed):
-
-1. **Separate Category Management** ❌ REMOVED
-   - Removed `/add-category`, `/categories`, `/update-category` routes
-   - Categories are now managed within transactions (predefined/custom)
-
-2. **Separate Analytics Page** ❌ REMOVED  
-   - Removed `/analytics` route
-   - Analytics integrated into Reports dashboard
-
-3. **Separate Forecast Page** ❌ REMOVED
-   - Removed `/forecast` route  
-   - Financial forecasting integrated into Goals dashboard
-
 ## Final Project Structure
 
 ### Backend (✅ Complete):

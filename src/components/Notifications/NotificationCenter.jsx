@@ -11,11 +11,73 @@ const NotificationCenter = () => {
   // Fetch notifications
   const { data: notificationData, isLoading, error, refetch } = useQuery({
     queryKey: ["notifications", filter, typeFilter],
-    queryFn: () => {
+    queryFn: async () => {
       const params = {};
       if (filter === "unread") params.unreadOnly = true;
       if (typeFilter !== "all") params.type = typeFilter;
-      return getNotificationsAPI(params);
+      
+      try {
+        const notifications = await getNotificationsAPI(params);
+        
+        // If budget alerts are selected or all types, also fetch budget alerts
+        if (typeFilter === "all" || typeFilter === "budget_alert") {
+          try {
+            const { getBudgetAlertsAPI } = await import("../../services/budget/budgetService");
+            const budgetAlerts = await getBudgetAlertsAPI();
+            
+            // Convert budget alerts to notification format
+            const alertNotifications = budgetAlerts.map(alert => ({
+              _id: `budget_${alert.budgetId}`,
+              type: "budget_alert",
+              title: `Budget Alert: ${alert.budgetName}`,
+              message: `${alert.category} • $${alert.spent.toFixed(2)} of $${alert.budget.toFixed(2)} used (${alert.percentage}%)`,
+              priority: alert.type === "exceeded" ? "high" : "medium",
+              read: false,
+              createdAt: new Date().toISOString()
+            }));
+            
+            // Combine notifications with budget alerts
+            const allNotifications = [...(notifications.notifications || []), ...alertNotifications];
+            const totalUnread = (notifications.unreadCount || 0) + alertNotifications.length;
+            
+            return {
+              notifications: allNotifications,
+              unreadCount: totalUnread
+            };
+          } catch (budgetError) {
+            console.log("Budget alerts not available:", budgetError.message);
+            return notifications;
+          }
+        }
+        
+        return notifications;
+      } catch (notificationError) {
+        // If notifications API fails, try to show only budget alerts
+        if (typeFilter === "budget_alert" || typeFilter === "all") {
+          try {
+            const { getBudgetAlertsAPI } = await import("../../services/budget/budgetService");
+            const budgetAlerts = await getBudgetAlertsAPI();
+            
+            const alertNotifications = budgetAlerts.map(alert => ({
+              _id: `budget_${alert.budgetId}`,
+              type: "budget_alert",
+              title: `Budget Alert: ${alert.budgetName}`,
+              message: `${alert.category} • $${alert.spent.toFixed(2)} of $${alert.budget.toFixed(2)} used (${alert.percentage}%)`,
+              priority: alert.type === "exceeded" ? "high" : "medium",
+              read: false,
+              createdAt: new Date().toISOString()
+            }));
+            
+            return {
+              notifications: alertNotifications,
+              unreadCount: alertNotifications.length
+            };
+          } catch (budgetError) {
+            throw notificationError;
+          }
+        }
+        throw notificationError;
+      }
     },
     refetchInterval: 30000, // Refetch every 30 seconds for real-time updates
   });
